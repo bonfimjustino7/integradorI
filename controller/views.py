@@ -1,6 +1,6 @@
-from models.objects import User, Client
+from models.objects import User
 
 
-def get_users(id, nome):
-    user = User().filter(id=id, nome=nome)
+def get_users(login, password):
+    user = User().filter(login=login, password=password)
     return user is not ()
