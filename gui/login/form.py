@@ -2,10 +2,10 @@ from PyQt5 import QtWidgets, uic
 from controller.views import get_users
 
 
-class MainForm(object):
+class LoginForm(object):
     def __init__(self):
         self.app = QtWidgets.QApplication([])
-        self.form = uic.loadUi('interfaces/main/ui/teste.ui')
+        self.form = uic.loadUi('gui/login/login.ui')
         self.form.pushButton.clicked.connect(self.entrar)
         self.form.pushButton_2.clicked.connect(self.cancelar)
 
