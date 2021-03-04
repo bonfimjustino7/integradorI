@@ -73,6 +73,14 @@ class Model(metaclass=SingletonMeta):
             print(error)
             return ()
 
+    def create_table(self, sql):
+        try:
+            self._cursor.execute(sql)
+            self._connection.commit()
+        except MySQLdb.DatabaseError as error:
+            print(error)
+            self._connection.rollback()
+
     def close(self):
         print('Close Connection')
         self._connection.close()

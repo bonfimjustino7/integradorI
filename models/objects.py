@@ -1,3 +1,4 @@
+from models import fields
 from models.base import BaseModel
 
 """
@@ -6,10 +7,15 @@ from models.base import BaseModel
 
 
 class User(BaseModel):
+    login = fields.StringField(max_length=200)
+    password = fields.StringField(max_length=200)
+
     class Meta:
         db_name = 'user'
 
 
-class Client(BaseModel):
+class Product(BaseModel):
+    nome = fields.StringField(max_length=200)
+
     class Meta:
-        db_name = 'client'
+        db_name = 'product'
